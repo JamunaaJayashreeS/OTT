@@ -1,0 +1,51 @@
+
+<body>
+    <div class="jumbotron">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 offset-md-3">
+                  <h3>HotStar FeedBack Form</h3>
+                  <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+                      <div class="form-group">
+                          <label for="firstName">First Name</label>
+                          <input type="text" id="shloka" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
+                          <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                              <div *ngIf="firstName.errors.required">First Name is required</div>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                          <label for="lastName">Last Name</label>
+                          <input type="text" id="shloka" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />
+                          <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+                              <div *ngIf="lastName.errors.required">Last Name is required</div>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="text" id="shloka" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+                          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                              <div *ngIf="email.errors.required">Email is required</div>
+                              <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                          <label for="feedback">FeedBack</label>
+                          <input type="textarea" id="feedback" class="form-control" name="feedback" [(ngModel)]="model.feedback" #feedback="ngModel" [ngClass]="{ 'is-invalid': f.submitted && feedback.invalid }" required minlength="20" />
+                          <div *ngIf="f.submitted && feedback.invalid" class="invalid-feedback">
+                              <div *ngIf="feedback.errors.required">FeedBack is required</div>
+                              <div *ngIf="feedback.errors.minlength">FeedBack must be at least 20 characters</div>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                          <button id="feedback" class="nav-link" routerLink="/first" routerLinkActive="active" >Submit FeedBack</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+  </body>
