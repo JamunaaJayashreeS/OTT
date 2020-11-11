@@ -1,0 +1,3 @@
+INSERT INTO MOVIE_DTO  (ID,MOVIENAME, LANGUAGE, GENRE, RATING, RELEASEDATE)  VALUES
+(1,'aaa','Tamil','Comedy',5,'2004-12-31'),
+(2,'bbb','Tamil','Comedy',5,'2004-12-31');
